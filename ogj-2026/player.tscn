@@ -84,7 +84,7 @@ unique_name_in_owner = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_0jq4s")
 animation = &"player_move"
-frame_progress = 0.65176857
+frame_progress = 0.6637063
 
 [node name="collbox" type="CollisionShape2D" parent="." unique_id=1296574509]
 shape = SubResource("RectangleShape2D_ncdoi")
