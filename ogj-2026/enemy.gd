@@ -32,11 +32,13 @@ func _ready():
 		%initcoll.shape = load("res://assets/collisions/limeplayerdetect.tres")
 		%initcoll.rotation = 0
 	elif type == "lemon":
+		collision_mask = -1
+		%sprite.animation = "lemon_idle"
 		var maxhealth = 100
 		var health = maxhealth
 		dmg = 20
 		%attackcoll.shape = load("res://assets/collisions/lemoncoll.tres")
-		%attackcoll.position.x = 107
+		%attackcoll.position.x = 98
 		%initcoll.shape = load("res://assets/collisions/lemonplayerdetect.tres")
 		%initcoll.rotation = PI / 2
 	elif type == "grapefruit":
@@ -98,7 +100,7 @@ func grapefruit():
 		%Timer.start(0)
 
 func _physics_process(delta):
-	if not is_on_floor():
+	if not is_on_floor() and not type == "lemon":
 		velocity += get_gravity() * delta
 		
 	if type == "lime":
@@ -121,11 +123,14 @@ func _on_timer_timeout():
 			%attacktimer.wait_time = 0.3
 			%attacktimer.start(0)
 		elif attack == "lemon":
-			%sprite.animation = "blue"
+			%sprite.animation = "lemon_idle"
 			%Timer.stop()
+			%attackanim.frame = 0
+			%attackanim.visible = true
+			%attackanim.play()
 			%attackbox.monitoring = true
 			%attackbox.rotation = PI if dir == -1 else 0
-			%attacktimer.wait_time = 0.4
+			%attacktimer.wait_time = 0.6
 			%attacktimer.start(0)
 		
 
@@ -139,8 +144,9 @@ func _on_attacktimer_timeout():
 		%cooldowntimer.wait_time = 0.1
 		%cooldowntimer.start(0)
 	elif type == "lemon":
-		%sprite.animation = "placeholder"
+		%sprite.animation = "lemon_idle"
 		%Timer.stop()
+		%attackanim.visible = false
 		%attackbox.monitoring = false
 		%cooldowntimer.wait_time = 0.1
 		%cooldowntimer.start(0)
