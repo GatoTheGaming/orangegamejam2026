@@ -5,10 +5,16 @@ var SPEED = 150.0
 var JUMP_VELOCITY = -300.0
 const RELEASE_DROP_MODIFIER = 0.7
 var attacking = false
-
+var bumpb = 0.0
 var maxhealth = 100
 var health = maxhealth
 var dmg = 50
+
+func powwow():
+	%sprite.material.set_shader_parameter("hit_effect",bumpb)
+
+func _ready():
+	pass
 
 func _physics_process(delta):
 	%sprite.play()
@@ -61,8 +67,14 @@ func _physics_process(delta):
 
 func damage(dm):
 	health -= dm
+	bumpb += 0.2
+	%sprite.material.set_shader_parameter("hit_effect",bumpb)
 	if health <= 0:
-		get_tree().change_scene_to_file("res://titlescreen.tscn")
+		var particle2 = load("res://assets/collisions/particle.tscn").instantiate()
+		particle2.position = position
+		get_parent().add_child(particle2)
+		particle2.material.set_shader_parameter("hit_effect",bumpb)
+		particle2.play("orange")
 	elif health < 50:
 		Ui.playg("25_anim")
 	elif health < 75:

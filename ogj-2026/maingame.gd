@@ -33,10 +33,14 @@ func _ready():
 func die():
 	num_enemies -= 1
 	if num_enemies <= 0:
-		%player.health = %player.maxhealth
+		
 		Ui.playg("full_idle")
 		Ui.shutter()
 		get_tree().paused = true
+		%player.position = Vector2(36,157)
+		%player.health = %player.maxhealth
+		%player.bumpb = 0.0
+		%player.powwow()
 		level += 1
 		spawn_enemies()
 func spawn_enemies():

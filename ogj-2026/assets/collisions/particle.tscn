@@ -5,9 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://cmva5albosh6c" path="res://assets/sprites/spritesheets/lime-explosion/lime-exposion1.png" id="2_l27b0"]
 [ext_resource type="Script" uid="uid://setp3uab78af" path="res://assets/collisions/particle.gd" id="2_py6qd"]
 [ext_resource type="Texture2D" uid="uid://vpwlpqrtq5yv" path="res://assets/sprites/spritesheets/lime-explosion/lime-exposion2.png" id="3_6rl14"]
+[ext_resource type="Texture2D" uid="uid://cga71mw8r3683" path="res://assets/sprites/spritesheets/grapefruit-blood/grape-boooom1.png" id="3_epesq"]
+[ext_resource type="Texture2D" uid="uid://xxufg655lvyl" path="res://assets/sprites/spritesheets/lemmon-explosion/explody-boy1.png" id="3_gpvrn"]
+[ext_resource type="Texture2D" uid="uid://d16ojgyuef2vu" path="res://assets/sprites/spritesheets/grapefruit-blood/grape-boooom2.png" id="4_8ltuo"]
 [ext_resource type="Texture2D" uid="uid://bp3ms5ka2uka6" path="res://assets/sprites/spritesheets/lime-explosion/lime-exposion3.png" id="4_ckcg3"]
+[ext_resource type="Texture2D" uid="uid://rlofjv4q5ce8" path="res://assets/sprites/spritesheets/lemmon-explosion/explody-boy2.png" id="4_kcipt"]
 [ext_resource type="Texture2D" uid="uid://dsdbfw3sf0uw5" path="res://assets/sprites/spritesheets/lime-explosion/lime-exposion4.png" id="5_3n4c8"]
+[ext_resource type="Texture2D" uid="uid://cngt74jkrjokj" path="res://assets/sprites/spritesheets/grapefruit-blood/grape-boooom3.png" id="5_njfqr"]
+[ext_resource type="Texture2D" uid="uid://bpil7n6n00wxa" path="res://assets/sprites/spritesheets/lemmon-explosion/explody-boy3.png" id="5_sigih"]
 [ext_resource type="Texture2D" uid="uid://utkvkxh2fgu4" path="res://assets/sprites/spritesheets/lime-explosion/lime-exposion5.png" id="6_6y1w0"]
+[ext_resource type="Texture2D" uid="uid://b361t42kxklhp" path="res://assets/sprites/spritesheets/lemmon-explosion/explody-boy4.png" id="6_mhhsf"]
+[ext_resource type="Texture2D" uid="uid://b677bw6y5jiag" path="res://assets/sprites/spritesheets/grapefruit-blood/grape-boooom4.png" id="6_uaycc"]
+[ext_resource type="Texture2D" uid="uid://cunann8p06bmy" path="res://assets/sprites/spritesheets/grapefruit-blood/grape-boooom5.png" id="7_av3t0"]
+[ext_resource type="Texture2D" uid="uid://cat57nj4ay7d" path="res://assets/sprites/spritesheets/ornage-boom/boom-orange1.png" id="12_228to"]
+[ext_resource type="Texture2D" uid="uid://5c2qm3i06gqr" path="res://assets/sprites/spritesheets/ornage-boom/boom-orange2.png" id="13_epesq"]
+[ext_resource type="Texture2D" uid="uid://ctvql6cjx41g6" path="res://assets/sprites/spritesheets/ornage-boom/boom-orange3.png" id="14_8ltuo"]
+[ext_resource type="Texture2D" uid="uid://de4n87k6gjwo2" path="res://assets/sprites/spritesheets/ornage-boom/boom-orange4.png" id="15_njfqr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ckcg3"]
 shader = ExtResource("1_6rl14")
@@ -93,13 +106,40 @@ animations = [{
 "name": &"flash",
 "speed": 16.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_epesq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8ltuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_njfqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uaycc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_av3t0")
+}],
+"loop": false,
 "name": &"grapefruit",
 "speed": 16.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gpvrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kcipt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sigih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mhhsf")
+}],
+"loop": false,
 "name": &"lemon",
 "speed": 16.0
 }, {
@@ -122,13 +162,30 @@ animations = [{
 "loop": false,
 "name": &"lime",
 "speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_228to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_epesq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8ltuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_njfqr")
+}],
+"loop": false,
+"name": &"orange",
+"speed": 5.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=335287598]
 texture_filter = 1
 material = SubResource("ShaderMaterial_ckcg3")
 sprite_frames = SubResource("SpriteFrames_hl2bd")
-animation = &"lime"
+animation = &"grapefruit"
 script = ExtResource("2_py6qd")
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
