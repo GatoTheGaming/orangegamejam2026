@@ -3,7 +3,15 @@
 [ext_resource type="Script" uid="uid://bh33uh716p4qp" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://pro18jcf3h0s" path="res://assets/sprites/chars/player/orng16ph.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bx6b0pqtbr5ie" path="res://assets/sprites/weapons/knife/knifeph.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://c1qd0x67qi34u" path="res://assets/sprites/chars/player/orange-move-1/Orange-1.png" id="3_ivps1"]
 [ext_resource type="Shape2D" uid="uid://bdt8rure6wfry" path="res://assets/collisions/knifecoll.tres" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://2vbwh3gb2ubl" path="res://assets/sprites/chars/player/orange-move-1/Orange-2.png" id="4_urp6f"]
+[ext_resource type="Texture2D" uid="uid://by2kihj8svd8i" path="res://assets/sprites/chars/player/orange-move-1/Orange-3.png" id="5_bwjto"]
+[ext_resource type="Texture2D" uid="uid://b2qyanf4guivg" path="res://assets/sprites/chars/player/orange-move-1/Orange-4.png" id="6_606se"]
+[ext_resource type="Texture2D" uid="uid://om8y2mymwp1i" path="res://assets/sprites/chars/player/orange-move-1/Orange-5.png" id="7_u1c27"]
+[ext_resource type="Texture2D" uid="uid://clxf05jld0ulf" path="res://assets/sprites/chars/player/orange-move-1/Orange-6.png" id="8_op7ga"]
+[ext_resource type="Texture2D" uid="uid://d0vyhk7m0ud47" path="res://assets/sprites/chars/player/orange-move-1/Orange-7.png" id="9_q13i1"]
+[ext_resource type="Texture2D" uid="uid://w3mcqck06guj" path="res://assets/sprites/chars/player/orange-move-1/Orange-8.png" id="10_pylmc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0jq4s"]
 animations = [{
@@ -14,6 +22,43 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_urp6f")
+}],
+"loop": true,
+"name": &"player_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_urp6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bwjto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pylmc")
+}],
+"loop": true,
+"name": &"player_move",
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncdoi"]
@@ -36,7 +81,10 @@ script = ExtResource("1_onrkg")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1098760710]
 unique_name_in_owner = true
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_0jq4s")
+animation = &"player_move"
+frame_progress = 0.6977509
 
 [node name="collbox" type="CollisionShape2D" parent="." unique_id=1296574509]
 shape = SubResource("RectangleShape2D_ncdoi")

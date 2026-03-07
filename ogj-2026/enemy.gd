@@ -26,6 +26,7 @@ func _ready():
 	attack = type
 	%collbox.shape = load("res://assets/collisions/normcollbox.tres")
 	if type == "lime":
+		%sprite.animation = "placeholder"
 		var maxhealth = 150
 		var health = maxhealth
 		dmg = 20

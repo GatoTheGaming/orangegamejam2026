@@ -11,10 +11,10 @@ var health = maxhealth
 var dmg = 50
 
 func _physics_process(delta):
-	# Add the gravity.
+	%sprite.play()
 	if not is_on_floor():
 		velocity += (get_gravity() * delta * 0.8)
-
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -29,6 +29,12 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+
+	if direction:
+		%sprite.animation = "player_move"
+	elif is_on_floor():
+		%sprite.animation = "player_idle"
 	if Input.is_action_just_pressed("attack") and not attacking:
 		attacking = true
 		%weaponarea.monitoring = true
