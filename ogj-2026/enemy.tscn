@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ceav5eqh72d6l" path="res://assets/sprites/chars/player/bluph.png" id="2_epg4t"]
 [ext_resource type="Texture2D" uid="uid://cy866664fye1y" path="res://assets/sprites/chars/player/grnph.png" id="2_iifgy"]
 [ext_resource type="Texture2D" uid="uid://pro18jcf3h0s" path="res://assets/sprites/chars/player/orng16ph.png" id="2_qi2p4"]
-[ext_resource type="Shape2D" uid="uid://u0385xy5bnwl" path="res://assets/collisions/lemonplayerdetect.tres" id="5_3yqyl"]
-[ext_resource type="Shape2D" uid="uid://bv6n0kybfw52" path="res://assets/collisions/lemoncoll.tres" id="5_epg4t"]
+[ext_resource type="Shape2D" uid="uid://pabmv0wnxa0v" path="res://assets/collisions/limeplayerdetect.tres" id="5_3yqyl"]
+[ext_resource type="Shape2D" uid="uid://byhk60blo0bhy" path="res://assets/collisions/grapecoll.tres" id="6_wujgv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flrdg"]
 animations = [{
@@ -77,9 +77,8 @@ monitoring = false
 
 [node name="attackcoll" type="CollisionShape2D" parent="attackbox" unique_id=96797395]
 unique_name_in_owner = true
-position = Vector2(107, 0)
-rotation = 1.5707964
-shape = ExtResource("5_epg4t")
+position = Vector2(18, 0)
+shape = ExtResource("6_wujgv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="attacktimer" to="." method="_on_attacktimer_timeout"]

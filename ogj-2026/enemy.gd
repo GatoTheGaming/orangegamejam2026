@@ -39,6 +39,16 @@ func _ready():
 		%attackcoll.position.x = 107
 		%initcoll.shape = load("res://assets/collisions/lemonplayerdetect.tres")
 		%initcoll.rotation = PI / 2
+	elif type == "grapefruit":
+		SPEED = 50
+		var maxhealth = 200
+		var health = maxhealth
+		dmg = 34
+		%attackcoll.shape = load("res://assets/collisions/grapecoll.tres")
+		%attackcoll.position.x = 0
+		%initcoll.shape = load("res://assets/collisions/limeplayerdetect.tres")
+		%initcoll.rotation = 0
+		
 		
 func lime():
 	
@@ -74,6 +84,19 @@ func lemon():
 		attacking = true
 		attackfinish = false
 		%Timer.start(0)
+
+func grapefruit():
+	if player in %initbox.get_overlapping_bodies() and not attacking and attackfinish:
+		%attacktimer.stop()
+		dir = 1 if player.position.x > position.x else -1
+		velocity.x = 0
+		attack = "grapefruit"
+		%sprite.animation = "green"
+		%Timer.wait_time = 0.6
+		attacking = true
+		attackfinish = false
+		%Timer.start(0)
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
