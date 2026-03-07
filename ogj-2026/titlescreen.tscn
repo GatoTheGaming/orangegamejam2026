@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://dv7d516ld075g"]
+
+[ext_resource type="Texture2D" uid="uid://dp4881p6ii8yf" path="res://assets/backgrounds/New Piskel-1.png (15).png" id="1_cjnew"]
+[ext_resource type="Script" uid="uid://bjttpmpm5ufup" path="res://titlescreen.gd" id="1_hxypl"]
+[ext_resource type="Texture2D" uid="uid://chak4kcaop0qf" path="res://assets/sprites/ui/start.png" id="2_8pdex"]
+[ext_resource type="Texture2D" uid="uid://3lksbo8rxit7" path="res://assets/sprites/ui/howtoplay.png" id="3_hxypl"]
+[ext_resource type="Texture2D" uid="uid://cyy5yaaauawey" path="res://assets/sprites/ui/explode.png" id="4_o0614"]
+[ext_resource type="Texture2D" uid="uid://cbsdy7md46o46" path="res://assets/sprites/ui/panop.jpg" id="6_o0614"]
+[ext_resource type="Texture2D" uid="uid://cu6ownl4tnijj" path="res://assets/sprites/ui/controls.png" id="7_jtfbd"]
+[ext_resource type="Texture2D" uid="uid://b4ps8kt151kn8" path="res://assets/sprites/ui/boom.png" id="8_8au8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymkym"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(0, 0, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu13d"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(148, 0, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3icf"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(296, 0, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuu4a"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(444, 0, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfmxy"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(592, 0, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l262f"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(0, 125, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fputw"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(148, 125, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekqhg"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(296, 125, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olu43"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(444, 125, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5oa7"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(592, 125, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y8sd"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(0, 250, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvkpk"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(148, 250, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md8dm"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(296, 250, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy1l4"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(444, 250, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhwgs"]
+atlas = ExtResource("8_8au8e")
+region = Rect2(592, 250, 148, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ginf8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymkym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu13d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3icf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuu4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfmxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l262f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fputw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekqhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olu43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5oa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y8sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvkpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md8dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy1l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhwgs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Titlescreen" type="Control" unique_id=813810926]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hxypl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=669285471]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_cjnew")
+
+[node name="start" type="TextureButton" parent="." unique_id=1651979874]
+texture_filter = 1
+layout_mode = 0
+offset_left = 256.0
+offset_top = 74.0
+offset_right = 352.0
+offset_bottom = 114.0
+texture_normal = ExtResource("2_8pdex")
+
+[node name="howtoplay" type="TextureButton" parent="." unique_id=719127639]
+texture_filter = 1
+layout_mode = 0
+offset_left = 251.0
+offset_top = 122.0
+offset_right = 347.0
+offset_bottom = 162.0
+texture_normal = ExtResource("3_hxypl")
+
+[node name="explode" type="TextureButton" parent="." unique_id=1666018167]
+texture_filter = 1
+layout_mode = 0
+offset_left = 252.0
+offset_top = 165.0
+offset_right = 348.0
+offset_bottom = 205.0
+texture_normal = ExtResource("4_o0614")
+
+[node name="explodetimer" type="Timer" parent="." unique_id=1050406954]
+unique_name_in_owner = true
+
+[node name="Panop" type="Sprite2D" parent="." unique_id=1980376859]
+unique_name_in_owner = true
+visible = false
+position = Vector2(195, 107.99999)
+scale = Vector2(1.5468749, 0.87499994)
+texture = ExtResource("6_o0614")
+
+[node name="controls" type="TextureRect" parent="." unique_id=2142228248]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("7_jtfbd")
+
+[node name="boom" type="AnimatedSprite2D" parent="." unique_id=2130331282]
+unique_name_in_owner = true
+visible = false
+position = Vector2(194, 100)
+sprite_frames = SubResource("SpriteFrames_ginf8")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="howtoplay" to="." method="_on_howtoplay_pressed"]
+[connection signal="pressed" from="explode" to="." method="_on_explode_pressed"]
+[connection signal="timeout" from="explodetimer" to="." method="_on_explodetimer_timeout"]

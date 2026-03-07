@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cmil6y2guapyk"]
+
+[ext_resource type="Script" uid="uid://dka83c3px7kwq" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://ceav5eqh72d6l" path="res://assets/sprites/chars/player/bluph.png" id="2_epg4t"]
+[ext_resource type="Texture2D" uid="uid://cy866664fye1y" path="res://assets/sprites/chars/player/grnph.png" id="2_iifgy"]
+[ext_resource type="Texture2D" uid="uid://pro18jcf3h0s" path="res://assets/sprites/chars/player/orng16ph.png" id="2_qi2p4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flrdg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_epg4t")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iifgy")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qi2p4")
+}],
+"loop": true,
+"name": &"placeholder",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xj2q"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xj2q"]
+radius = 46.010868
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iifgy"]
+radius = 4.0
+height = 18.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1267792803]
+texture_filter = 1
+script = ExtResource("1_4gyqm")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=680169159]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_flrdg")
+animation = &"blue"
+
+[node name="collbox" type="CollisionShape2D" parent="." unique_id=1548623515]
+shape = SubResource("RectangleShape2D_5xj2q")
+
+[node name="initbox" type="Area2D" parent="." unique_id=1767635981]
+unique_name_in_owner = true
+
+[node name="initcoll" type="CollisionShape2D" parent="initbox" unique_id=783991018]
+shape = SubResource("CircleShape2D_5xj2q")
+
+[node name="Timer" type="Timer" parent="." unique_id=1237027722]
+unique_name_in_owner = true
+wait_time = 0.6
+one_shot = true
+
+[node name="attacktimer" type="Timer" parent="." unique_id=1957606016]
+unique_name_in_owner = true
+wait_time = 0.2
+one_shot = true
+
+[node name="cooldowntimer" type="Timer" parent="." unique_id=1157333339]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="attackbox" type="Area2D" parent="." unique_id=85189009]
+unique_name_in_owner = true
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackbox" unique_id=96797395]
+position = Vector2(18, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_iifgy")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="attacktimer" to="." method="_on_attacktimer_timeout"]
+[connection signal="timeout" from="cooldowntimer" to="." method="_on_cooldowntimer_timeout"]
+[connection signal="body_entered" from="attackbox" to="." method="_on_attackbox_body_entered"]
