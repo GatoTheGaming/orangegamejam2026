@@ -7,6 +7,24 @@ var num_enemies = 0
 var maps = []
 var items = [] # max 3
 # Called when the node enters the scene tree for the first time.
+
+func IFSTATEMENTOVERLOAD(item,state): # state = true | false
+	if item == "juicebox":
+		if state:
+			%player.maxhealth += 20
+		else:
+			%player.maxhealth -= 20
+	if item == "acid overdrive":
+		if state:
+			%player.dmg += 10
+		else:
+			%player.dmg -= 10
+	if item == "sponginess":
+		if state:
+			%player.JUMP_VELOCITY -= 30
+		else:
+			%player.JUMP_VELOCITY += 30
+
 func _ready():
 	map = load("res://template.tscn")
 	%startscreen.visible = true

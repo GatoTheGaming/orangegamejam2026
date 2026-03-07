@@ -238,6 +238,11 @@ func damage(dm):
 	%sprite.material.set_shader_parameter("hit_effect",bumpb)
 	if health <= 0:
 		get_parent().die()
+		var particle2 = load("res://assets/collisions/particle.tscn").instantiate()
+		particle2.position = position
+		get_parent().add_child(particle2)
+		particle2.material.set_shader_parameter("hit_effect",bumpb)
+		particle2.play(type)
 		queue_free()
 	
 
