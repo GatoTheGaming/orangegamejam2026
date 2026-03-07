@@ -15,3 +15,11 @@ func _process(delta):
 	if shuttering == true:
 		%black.modulate.a = lerpf(%black.modulate.a, 1, 0.025)
 		%shutter.position.y = lerpf(%shutter.position.y, 326, 0.025)
+	else:
+		%black.modulate.a = lerpf(%black.modulate.a, 0, 0.025)
+		%shutter.position.y = lerpf(%shutter.position.y, -218, 0.025)
+
+
+func _on_startbutt_pressed():
+	get_tree().paused = false
+	shuttering = false

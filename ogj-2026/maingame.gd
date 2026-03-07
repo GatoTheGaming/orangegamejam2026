@@ -35,8 +35,9 @@ func die():
 	if num_enemies <= 0:
 		
 		Ui.playg("full_idle")
-		#Ui.shutter()
-		#get_tree().paused = true
+		Ui.shutter()
+		get_tree().paused = true
+		%player.position = Vector2(36,157)
 		%player.health = %player.maxhealth
 		%player.bumpb = 0.0
 		%player.powwow()
