@@ -51,6 +51,7 @@ frame_progress = 1.0
 
 [node name="weaponarea" type="Area2D" parent="." unique_id=1485950472]
 unique_name_in_owner = true
+collision_layer = 3
 monitoring = false
 
 [node name="weaponhit" type="CollisionShape2D" parent="weaponarea" unique_id=237471300]

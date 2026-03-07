@@ -104,7 +104,7 @@ script = ExtResource("1_4gyqm")
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=680169159]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_flrdg")
-animation = &"lemon_idle"
+animation = &"grapefruit"
 
 [node name="collbox" type="CollisionShape2D" parent="." unique_id=1548623515]
 unique_name_in_owner = true

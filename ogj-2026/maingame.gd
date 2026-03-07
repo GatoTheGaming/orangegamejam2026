@@ -4,6 +4,7 @@ var level = 2
 var map = preload("res://template.tscn")
 @onready var enemyp = preload("res://enemy.tscn")
 var num_enemies = 0
+var maps = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	map = load("res://template.tscn")
@@ -35,6 +36,7 @@ func spawn_enemies():
 		%map.queue_free()
 		
 		var mapp = load("res://template.tscn").instantiate()
+		maps.append(mapp)
 		mapp.position = Vector2(0,0)
 		mapp.z_index = -1
 		add_child(mapp)
@@ -61,6 +63,19 @@ func spawn_enemies():
 		add_child(enemy)
 		
 		num_enemies = 4
+	elif level == 3:
+		for mapz in maps:
+			mapz.queue_free()
+		var mapp = load("res://level3.tscn").instantiate()
+		maps.append(mapp)
+		mapp.position = Vector2(0,0)
+		mapp.z_index = -1
+		add_child(mapp)
+		var enemy = enemyp.instantiate()
+		enemy.type = "grapefruit"
+		enemy.position = Vector2(313,135)
+		enemy.player = %player
+		add_child(enemy)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
