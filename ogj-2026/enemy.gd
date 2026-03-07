@@ -11,6 +11,7 @@ var attacking = false
 var attackfinish = true
 var hovering = false
 var slamming = false
+var bumpb = 0
 
 var maxhealth = 150
 var health = maxhealth
@@ -26,7 +27,7 @@ func _ready():
 	attack = type
 	%collbox.shape = load("res://assets/collisions/normcollbox.tres")
 	if type == "lime":
-		%sprite.animation = "placeholder"
+		%sprite.animation = "lime_idle"
 		var maxhealth = 150
 		var health = maxhealth
 		dmg = 20
@@ -56,16 +57,24 @@ func _ready():
 		%attackcoll.position.x = 0
 		%initcoll.shape = load("res://assets/collisions/limeplayerdetect.tres")
 		%initcoll.rotation = 0
+		%sprite.animation = "grapefruit"
 		
 		
 func lime():
 	
 	if player in %initbox.get_overlapping_bodies() and not attacking and attackfinish:
+		var particle = load("res://assets/collisions/particle.tscn").instantiate()
+		particle.position = position
+		get_parent().add_child(particle)
+		particle.play("flash")
 		%attacktimer.stop()
 		dir = 1 if player.position.x > position.x else -1
+		%sprite.flip_h = true if dir == -1 else false
 		velocity.x = 0
 		attack = "lime"
-		%sprite.animation = "green"
+		%sprite.modulate.r = 1
+		%sprite.modulate.g = 0.5
+		%sprite.modulate.b = 0.5
 		%Timer.wait_time = 0.6
 		attacking = true
 		attackfinish = false
@@ -83,6 +92,10 @@ func lime():
 			
 func lemon():
 	if player in %initbox.get_overlapping_bodies() and not attacking and attackfinish:
+		var particle = load("res://assets/collisions/particle.tscn").instantiate()
+		particle.position = position
+		get_parent().add_child(particle)
+		particle.play("flash")
 		%attacktimer.stop()
 		dir = 1 if player.position.x > position.x else -1
 		attack = "lemon"
@@ -97,9 +110,16 @@ func lemon():
 
 func grapefruit():
 	if player in %initbox.get_overlapping_bodies() and not attacking and attackfinish:
+		var particle = load("res://assets/collisions/particle.tscn").instantiate()
+		particle.position = position
+		get_parent().add_child(particle)
+		particle.play("flash")
 		%attacktimer.stop()
 		dir = 1 if player.position.x > position.x else -1
 		attack = "grapefruit"
+		%sprite.modulate.r = 1
+		%sprite.modulate.g = 0.5
+		%sprite.modulate.b = 0.5
 		%Timer.wait_time = 0.8
 		hovering = true
 		attacking = true
@@ -119,7 +139,7 @@ func grapefruit():
 func _physics_process(delta):
 	if not is_on_floor() and not type == "lemon" and not hovering:
 		velocity += get_gravity() * delta
-		
+	
 	if type == "lime":
 		lime()
 	elif type == "lemon":
@@ -150,13 +170,12 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	if attacking and not attackfinish:
-		%sprite.modulate.r = 1
-		%sprite.modulate.g = 1
-		%sprite.modulate.b = 1
+		
 		if attack == "lime":
 			%Timer.stop()
 			%attackbox.monitoring = true
-			%sprite.animation = "blue"
+			%sprite.animation = "lime_attack"
+			%sprite.play()
 			velocity.y = -150
 			velocity.x += 200 * dir
 			%attackbox.rotation = PI if dir == -1 else 0
@@ -184,9 +203,12 @@ func _on_timer_timeout():
 
 
 func _on_attacktimer_timeout():
+	%sprite.modulate.r = 1
+	%sprite.modulate.g = 1
+	%sprite.modulate.b = 1
 	if type == "lime":
 		%Timer.stop()
-		%sprite.animation = "placeholder"
+		%sprite.animation = "lime_idle"
 		velocity.x = 0
 		%attackbox.monitoring = false
 		%cooldowntimer.wait_time = 0.1
@@ -212,6 +234,8 @@ func _on_cooldowntimer_timeout():
 	
 func damage(dm):
 	health -= dm
+	bumpb += 0.2
+	%sprite.material.set_shader_parameter("hit_effect",bumpb)
 	if health <= 0:
 		get_parent().die()
 		queue_free()

@@ -5,6 +5,7 @@ var map = preload("res://template.tscn")
 @onready var enemyp = preload("res://enemy.tscn")
 var num_enemies = 0
 var maps = []
+var items = [] # max 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	map = load("res://template.tscn")
@@ -14,8 +15,9 @@ func _ready():
 func die():
 	num_enemies -= 1
 	if num_enemies <= 0:
-		#Ui.shutter()
-		#get_tree().paused = true
+		%player.health = %player.maxhealth
+		Ui.shutter()
+		get_tree().paused = true
 		level += 1
 		spawn_enemies()
 func spawn_enemies():

@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dka83c3px7kwq" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://ceav5eqh72d6l" path="res://assets/sprites/chars/player/bluph.png" id="2_epg4t"]
 [ext_resource type="Texture2D" uid="uid://cy866664fye1y" path="res://assets/sprites/chars/player/grnph.png" id="2_iifgy"]
+[ext_resource type="Shader" uid="uid://bdgvycheuhdhp" path="res://jitter.gdshader" id="2_qgdfx"]
 [ext_resource type="Texture2D" uid="uid://pro18jcf3h0s" path="res://assets/sprites/chars/player/orng16ph.png" id="2_qi2p4"]
-[ext_resource type="Texture2D" uid="uid://bfye6hjey1wym" path="res://assets/sprites/chars/player/grapefruitph.png" id="3_g2u8i"]
+[ext_resource type="Texture2D" uid="uid://dwwb7mehuawfc" path="res://assets/sprites/spritesheets/grape-fruit.png" id="3_jpbtr"]
 [ext_resource type="Texture2D" uid="uid://dxr0ddng0aj1j" path="res://assets/sprites/spritesheets/lemomn1.png" id="4_wujgv"]
 [ext_resource type="Shape2D" uid="uid://pabmv0wnxa0v" path="res://assets/collisions/limeplayerdetect.tres" id="5_3yqyl"]
 [ext_resource type="Shape2D" uid="uid://bv6n0kybfw52" path="res://assets/collisions/lemoncoll.tres" id="5_epg4t"]
@@ -25,6 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://by776ftjicjrh" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot8.png" id="15_o7rgc"]
 [ext_resource type="Texture2D" uid="uid://b4nosc0ttqe1w" path="res://New Piskel-4.png (4).png" id="16_nnovl"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qku5p"]
+resource_local_to_scene = true
+shader = ExtResource("2_qgdfx")
+shader_parameter/hit_effect = 0.0
+shader_parameter/shake_intensity = 7.0
+shader_parameter/flash_speed = 30.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_flrdg"]
 animations = [{
 "frames": [{
@@ -37,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_g2u8i")
+"texture": ExtResource("3_jpbtr")
 }],
 "loop": true,
 "name": &"grapefruit",
@@ -75,9 +84,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_b5wqg")
 }],
-"loop": true,
+"loop": false,
 "name": &"lime_attack",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -137,6 +146,7 @@ script = ExtResource("1_4gyqm")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=680169159]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qku5p")
 sprite_frames = SubResource("SpriteFrames_flrdg")
 animation = &"lime_attack"
 

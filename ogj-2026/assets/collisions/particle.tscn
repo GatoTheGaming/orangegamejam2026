@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://ibm8hkieglyc"]
+
+[ext_resource type="Texture2D" uid="uid://bs4xtwqy1fcaj" path="res://assets/sprites/weapons/flashes.png" id="1_h4wxw"]
+[ext_resource type="Script" uid="uid://setp3uab78af" path="res://assets/collisions/particle.gd" id="2_py6qd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py6qd"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbumv"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdclr"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3epxb"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft44c"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l27b0"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rl14"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckcg3"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n4c8"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y1w0"]
+atlas = ExtResource("1_h4wxw")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hl2bd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py6qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbumv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdclr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3epxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft44c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l27b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rl14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckcg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n4c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y1w0")
+}],
+"loop": false,
+"name": &"flash",
+"speed": 16.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=335287598]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hl2bd")
+animation = &"flash"
+script = ExtResource("2_py6qd")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
