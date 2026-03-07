@@ -8,11 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://dxr0ddng0aj1j" path="res://assets/sprites/spritesheets/lemomn1.png" id="4_wujgv"]
 [ext_resource type="Shape2D" uid="uid://pabmv0wnxa0v" path="res://assets/collisions/limeplayerdetect.tres" id="5_3yqyl"]
 [ext_resource type="Shape2D" uid="uid://bv6n0kybfw52" path="res://assets/collisions/lemoncoll.tres" id="5_epg4t"]
+[ext_resource type="Texture2D" uid="uid://bcmfevim8p2vw" path="res://assets/sprites/spritesheets/lime-move/lime-attack1.png" id="6_jpbtr"]
 [ext_resource type="Shape2D" uid="uid://ddte6pef4ql57" path="res://assets/collisions/grapefruitcollbox.tres" id="7_g2u8i"]
+[ext_resource type="Texture2D" uid="uid://bk81sw8he0y3q" path="res://assets/sprites/spritesheets/lime-move/lime-attack2.png" id="7_qgdfx"]
 [ext_resource type="Texture2D" uid="uid://cygdxp43yixhb" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot1.png" id="8_5hcft"]
+[ext_resource type="Texture2D" uid="uid://b71e8wr24khoq" path="res://assets/sprites/spritesheets/lime-move/lime-attack3.png" id="8_qku5p"]
+[ext_resource type="Texture2D" uid="uid://by21j84kblfv7" path="res://assets/sprites/spritesheets/lime-move/lime-attack4.png" id="9_l1fjw"]
 [ext_resource type="Texture2D" uid="uid://rowjctdnt1ya" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot2.png" id="9_nnovl"]
+[ext_resource type="Texture2D" uid="uid://bjiqmocp7rc4d" path="res://assets/sprites/spritesheets/lime-move/lime-attack5.png" id="10_b5wqg"]
 [ext_resource type="Texture2D" uid="uid://bg7nhi58epmll" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot3.png" id="10_jmwgi"]
 [ext_resource type="Texture2D" uid="uid://babumamqo2sbn" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot4.png" id="11_g2u8i"]
+[ext_resource type="Texture2D" uid="uid://e88jvhxgan61" path="res://assets/sprites/spritesheets/lime-guy.png" id="11_hgro5"]
 [ext_resource type="Texture2D" uid="uid://bsb4qk8rrjhsu" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot5.png" id="12_otto8"]
 [ext_resource type="Texture2D" uid="uid://c8vqy2g21g3e3" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot6.png" id="13_8q82m"]
 [ext_resource type="Texture2D" uid="uid://52n0pmjlysdt" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot7.png" id="14_epc7x"]
@@ -51,6 +57,34 @@ animations = [{
 }],
 "loop": true,
 "name": &"lemon_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jpbtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qgdfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qku5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l1fjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b5wqg")
+}],
+"loop": true,
+"name": &"lime_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_hgro5")
+}],
+"loop": true,
+"name": &"lime_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -104,7 +138,7 @@ script = ExtResource("1_4gyqm")
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=680169159]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_flrdg")
-animation = &"green"
+animation = &"lime_attack"
 
 [node name="collbox" type="CollisionShape2D" parent="." unique_id=1548623515]
 unique_name_in_owner = true
