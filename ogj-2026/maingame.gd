@@ -1,6 +1,6 @@
 extends Node2D
 
-var level = 1
+var level = 2
 var map = preload("res://template.tscn")
 @onready var enemyp = preload("res://enemy.tscn")
 var num_enemies = 0
@@ -13,8 +13,8 @@ func _ready():
 func die():
 	num_enemies -= 1
 	if num_enemies <= 0:
-		Ui.shutter()
-		get_tree().paused = true
+		#Ui.shutter()
+		#get_tree().paused = true
 		level += 1
 		spawn_enemies()
 func spawn_enemies():
@@ -45,8 +45,13 @@ func spawn_enemies():
 		enemy.player = %player
 		add_child(enemy)
 		enemy = enemyp.instantiate()
+		enemy.type = "lemon"
+		enemy.position = Vector2(76,87)
+		enemy.player = %player
+		add_child(enemy)
+		enemy = enemyp.instantiate()
 		enemy.type = "lime"
-		enemy.position = Vector2(193,159)
+		enemy.position = Vector2(193,135)
 		enemy.player = %player
 		add_child(enemy)
 		enemy = enemyp.instantiate()
@@ -54,7 +59,8 @@ func spawn_enemies():
 		enemy.position = Vector2(192,88)
 		enemy.player = %player
 		add_child(enemy)
-		num_enemies = 3
+		
+		num_enemies = 4
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

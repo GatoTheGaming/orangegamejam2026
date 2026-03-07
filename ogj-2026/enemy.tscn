@@ -4,8 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://ceav5eqh72d6l" path="res://assets/sprites/chars/player/bluph.png" id="2_epg4t"]
 [ext_resource type="Texture2D" uid="uid://cy866664fye1y" path="res://assets/sprites/chars/player/grnph.png" id="2_iifgy"]
 [ext_resource type="Texture2D" uid="uid://pro18jcf3h0s" path="res://assets/sprites/chars/player/orng16ph.png" id="2_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://dxr0ddng0aj1j" path="res://assets/sprites/spritesheets/lemomn1.png" id="4_wujgv"]
 [ext_resource type="Shape2D" uid="uid://pabmv0wnxa0v" path="res://assets/collisions/limeplayerdetect.tres" id="5_3yqyl"]
-[ext_resource type="Shape2D" uid="uid://byhk60blo0bhy" path="res://assets/collisions/grapecoll.tres" id="6_wujgv"]
+[ext_resource type="Shape2D" uid="uid://bv6n0kybfw52" path="res://assets/collisions/lemoncoll.tres" id="5_epg4t"]
+[ext_resource type="Texture2D" uid="uid://cygdxp43yixhb" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot1.png" id="8_5hcft"]
+[ext_resource type="Texture2D" uid="uid://rowjctdnt1ya" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot2.png" id="9_nnovl"]
+[ext_resource type="Texture2D" uid="uid://bg7nhi58epmll" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot3.png" id="10_jmwgi"]
+[ext_resource type="Texture2D" uid="uid://babumamqo2sbn" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot4.png" id="11_g2u8i"]
+[ext_resource type="Texture2D" uid="uid://bsb4qk8rrjhsu" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot5.png" id="12_otto8"]
+[ext_resource type="Texture2D" uid="uid://c8vqy2g21g3e3" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot6.png" id="13_8q82m"]
+[ext_resource type="Texture2D" uid="uid://52n0pmjlysdt" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot7.png" id="14_epc7x"]
+[ext_resource type="Texture2D" uid="uid://by776ftjicjrh" path="res://assets/sprites/spritesheets/lemon-attack/lemon-shoot8.png" id="15_o7rgc"]
+[ext_resource type="Texture2D" uid="uid://b4nosc0ttqe1w" path="res://New Piskel-4.png (4).png" id="16_nnovl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flrdg"]
 animations = [{
@@ -27,6 +37,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_wujgv")
+}],
+"loop": true,
+"name": &"lemon_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_qi2p4")
 }],
 "loop": true,
@@ -37,6 +55,41 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xj2q"]
 size = Vector2(16, 16)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdav3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5hcft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nnovl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jmwgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g2u8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_otto8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8q82m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_epc7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o7rgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nnovl")
+}],
+"loop": false,
+"name": &"lemonlazer",
+"speed": 12.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1267792803]
 texture_filter = 1
 script = ExtResource("1_4gyqm")
@@ -44,9 +97,10 @@ script = ExtResource("1_4gyqm")
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=680169159]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_flrdg")
-animation = &"blue"
+animation = &"placeholder"
 
 [node name="collbox" type="CollisionShape2D" parent="." unique_id=1548623515]
+unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_5xj2q")
 
 [node name="initbox" type="Area2D" parent="." unique_id=1767635981]
@@ -77,8 +131,18 @@ monitoring = false
 
 [node name="attackcoll" type="CollisionShape2D" parent="attackbox" unique_id=96797395]
 unique_name_in_owner = true
-position = Vector2(18, 0)
-shape = ExtResource("6_wujgv")
+position = Vector2(98, 0)
+rotation = 1.5707964
+shape = ExtResource("5_epg4t")
+
+[node name="attackanim" type="AnimatedSprite2D" parent="attackbox" unique_id=763425316]
+unique_name_in_owner = true
+position = Vector2(97, 0)
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_kdav3")
+animation = &"lemonlazer"
+frame = 8
+frame_progress = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="attacktimer" to="." method="_on_attacktimer_timeout"]
