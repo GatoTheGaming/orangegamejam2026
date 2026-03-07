@@ -63,6 +63,12 @@ func damage(dm):
 	health -= dm
 	if health <= 0:
 		get_tree().change_scene_to_file("res://titlescreen.tscn")
+	elif health < 50:
+		Ui.playg("25_anim")
+	elif health < 75:
+		Ui.playg("50_anim")
+	elif health < 100:
+		Ui.playg("75_anim")
 
 func _on_weapontext_animation_finished():
 	attacking = false

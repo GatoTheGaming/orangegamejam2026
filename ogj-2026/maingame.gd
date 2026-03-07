@@ -16,6 +16,7 @@ func die():
 	num_enemies -= 1
 	if num_enemies <= 0:
 		%player.health = %player.maxhealth
+		Ui.playg("full_idle")
 		Ui.shutter()
 		get_tree().paused = true
 		level += 1
