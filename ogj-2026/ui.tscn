@@ -3,8 +3,128 @@
 [ext_resource type="Texture2D" uid="uid://imdgdcu3t0jm" path="res://assets/sprites/spritesheets/Shutter.png" id="1_fyqef"]
 [ext_resource type="Script" uid="uid://4qynqwoqmnc1" path="res://ui.gd" id="1_m6e0p"]
 [ext_resource type="Texture2D" uid="uid://b11o5bw53u7pr" path="res://assets/sprites/spritesheets/slots.png" id="3_27fn8"]
+[ext_resource type="Texture2D" uid="uid://3k2pv8irmfci" path="res://assets/sprites/ui/Hela-juice14.png" id="4_vkygq"]
+[ext_resource type="Texture2D" uid="uid://bb01q30k8s1uq" path="res://assets/sprites/ui/Hela-juice15.png" id="5_sosvr"]
+[ext_resource type="Texture2D" uid="uid://ci7im5fh4drnb" path="res://assets/sprites/ui/Hela-juice16.png" id="6_ndy3v"]
+[ext_resource type="Texture2D" uid="uid://66limsmibvfv" path="res://assets/sprites/ui/health/Hela-juice10.png" id="7_x2s2p"]
+[ext_resource type="Texture2D" uid="uid://cm351i5s3bc3" path="res://assets/sprites/ui/health/Hela-juice11.png" id="8_v8jk5"]
+[ext_resource type="Texture2D" uid="uid://dyxp02ftppitv" path="res://assets/sprites/ui/health/Hela-juice12.png" id="9_cka8k"]
+[ext_resource type="Texture2D" uid="uid://crorome7kyum5" path="res://assets/sprites/ui/health/Hela-juice13.png" id="10_53buu"]
+[ext_resource type="Texture2D" uid="uid://p5ijvjnke1ex" path="res://assets/sprites/ui/health/Hela-juice6.png" id="11_7w61g"]
+[ext_resource type="Texture2D" uid="uid://mgbhn0ujodwx" path="res://assets/sprites/ui/health/Hela-juice7.png" id="12_ccnxy"]
+[ext_resource type="Texture2D" uid="uid://coi076o3mfull" path="res://assets/sprites/ui/health/Hela-juice8.png" id="13_r2460"]
+[ext_resource type="Texture2D" uid="uid://c10p5c2n5k3li" path="res://assets/sprites/ui/health/Hela-juice9.png" id="14_gxnlh"]
+[ext_resource type="Texture2D" uid="uid://b2rt0l8e1jo6l" path="res://assets/sprites/ui/health/Hela-juice1.png" id="15_w05v2"]
+[ext_resource type="Texture2D" uid="uid://vbjt5s81ar3c" path="res://assets/sprites/ui/health/Hela-juice2.png" id="16_v463t"]
+[ext_resource type="Texture2D" uid="uid://bf7l5x2gmd72w" path="res://assets/sprites/ui/health/Hela-juice3.png" id="17_2u0ql"]
+[ext_resource type="Texture2D" uid="uid://47fwpk1yjo75" path="res://assets/sprites/ui/health/Hela-juice4.png" id="18_r4oxx"]
+[ext_resource type="Texture2D" uid="uid://275cuygjjg3y" path="res://assets/sprites/ui/health/Hela-juice5.png" id="19_i2v2c"]
+[ext_resource type="Texture2D" uid="uid://bhr2dglk6fmyd" path="res://assets/sprites/ui/health/health.png" id="20_qvlql"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m6e0p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqeas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vkygq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sosvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ndy3v")
+}],
+"loop": false,
+"name": &"0_anim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x2s2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v8jk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cka8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_53buu")
+}],
+"loop": false,
+"name": &"25_anim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_53buu")
+}],
+"loop": false,
+"name": &"25_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7w61g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ccnxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r2460")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gxnlh")
+}],
+"loop": false,
+"name": &"50_anim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_gxnlh")
+}],
+"loop": false,
+"name": &"50_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_w05v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v463t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2u0ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_r4oxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i2v2c")
+}],
+"loop": false,
+"name": &"75_anim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_i2v2c")
+}],
+"loop": false,
+"name": &"75_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_qvlql")
+}],
+"loop": false,
+"name": &"full_idle",
+"speed": 5.0
+}]
 
 [node name="ui" type="Control" unique_id=43963998]
 process_mode = 3
@@ -43,3 +163,11 @@ offset_top = 218.0
 offset_right = 384.0
 offset_bottom = 434.0
 texture = SubResource("CanvasTexture_m6e0p")
+
+[node name="health" type="AnimatedSprite2D" parent="." unique_id=320223897]
+unique_name_in_owner = true
+z_index = 2
+texture_filter = 1
+position = Vector2(15, 249)
+sprite_frames = SubResource("SpriteFrames_gqeas")
+animation = &"full_idle"

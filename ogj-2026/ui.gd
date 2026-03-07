@@ -5,7 +5,8 @@ var shuttering = false
 func _ready():
 	%shutter.position.y = -218
 	%black.modulate.a = 0
-
+func playg(anim):
+	%health.play(anim)
 func shutter():
 	%shutter.visible = true
 	shuttering = true
