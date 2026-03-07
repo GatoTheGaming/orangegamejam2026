@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cunann8p06bmy"
-path="res://.godot/imported/grape-boooom5.png-27e840b05c7301934da9763d354da43f.ctex"
+uid="uid://bibmkppiqbth2"
+path="res://.godot/imported/rail4.png-35aaeffa19eba707df2e7599e763ffb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spritesheets/New folder/grape-boooom5.png"
-dest_files=["res://.godot/imported/grape-boooom5.png-27e840b05c7301934da9763d354da43f.ctex"]
+source_file="res://assets/sprites/spritesheets/rail/rail4.png"
+dest_files=["res://.godot/imported/rail4.png-35aaeffa19eba707df2e7599e763ffb8.ctex"]
 
 [params]
 
