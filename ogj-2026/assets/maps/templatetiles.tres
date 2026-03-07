@@ -2,6 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://3n7kvcu0n0y5" path="res://assets/sprites/spritesheets/wood.png" id="1_0v84h"]
 [ext_resource type="Texture2D" uid="uid://bmfnxji00408g" path="res://assets/sprites/spritesheets/train-1-test.png" id="2_d5kob"]
+[ext_resource type="Texture2D" uid="uid://btyvuikf3ooaj" path="res://assets/sprites/spritesheets/train-1-test-2.png" id="3_r0fya"]
+[ext_resource type="Texture2D" uid="uid://cdj0cxlgcc6bf" path="res://assets/sprites/spritesheets/fixed-tilemap.png" id="4_q2xtx"]
+[ext_resource type="Texture2D" uid="uid://ljw7ktl0bj62" path="res://assets/sprites/spritesheets/New Piskel-2.png (6).png" id="5_h54ap"]
+[ext_resource type="Texture2D" uid="uid://dkxenaxndklf7" path="res://assets/sprites/spritesheets/pipes.png" id="6_avjke"]
+[ext_resource type="Texture2D" uid="uid://u2ol5oyi4jv3" path="res://assets/sprites/spritesheets/darkpipes.png" id="7_r5rdr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvpb1"]
 texture = ExtResource("1_0v84h")
@@ -31,8 +36,85 @@ texture_region_size = Vector2i(24, 24)
 5:1/0 = 0
 6:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2xtx"]
+texture = ExtResource("3_r0fya")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h54ap"]
+texture = ExtResource("4_q2xtx")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+7:2/0 = 0
+8:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avjke"]
+texture = ExtResource("5_h54ap")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5rdr"]
+texture = ExtResource("6_avjke")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qp3lw"]
+texture = ExtResource("7_r5rdr")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [resource]
 tile_size = Vector2i(24, 24)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nvpb1")
 sources/1 = SubResource("TileSetAtlasSource_r0fya")
+sources/2 = SubResource("TileSetAtlasSource_q2xtx")
+sources/3 = SubResource("TileSetAtlasSource_h54ap")
+sources/4 = SubResource("TileSetAtlasSource_avjke")
+sources/5 = SubResource("TileSetAtlasSource_r5rdr")
+sources/6 = SubResource("TileSetAtlasSource_qp3lw")

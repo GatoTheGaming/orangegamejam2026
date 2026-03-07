@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b677bw6y5jiag"
-path="res://.godot/imported/grape-boooom4.png-90bcdf8ee0eeb90d815b2e887040e46e.ctex"
+path="res://.godot/imported/grape-boooom4.png-506094335ff423e7ad7d0013fbb7009a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/spritesheets/grapefruit-blood/grape-boooom4.png"
-dest_files=["res://.godot/imported/grape-boooom4.png-90bcdf8ee0eeb90d815b2e887040e46e.ctex"]
+source_file="res://assets/sprites/spritesheets/New folder/grape-boooom4.png"
+dest_files=["res://.godot/imported/grape-boooom4.png-506094335ff423e7ad7d0013fbb7009a.ctex"]
 
 [params]
 
