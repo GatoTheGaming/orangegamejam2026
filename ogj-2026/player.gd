@@ -42,7 +42,7 @@ func _physics_process(delta):
 			%weapontext.flip_h = true
 			%sprite.flip_h = true
 			%weapontext.position.x = -16
-			%weaponarea.rotation = 180.0
+			%weaponarea.rotation = PI
 		%weapontext.play("swordph")
 	elif not attacking:
 		%weaponarea.monitoring = false
