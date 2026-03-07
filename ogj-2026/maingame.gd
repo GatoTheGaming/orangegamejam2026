@@ -1,6 +1,6 @@
 extends Node2D
 
-var level = 2
+var level = 1
 var map = preload("res://template.tscn")
 @onready var enemyp = preload("res://enemy.tscn")
 var num_enemies = 0
@@ -66,6 +66,7 @@ func spawn_enemies():
 	elif level == 3:
 		for mapz in maps:
 			mapz.queue_free()
+		maps = []
 		var mapp = load("res://level3.tscn").instantiate()
 		maps.append(mapp)
 		mapp.position = Vector2(0,0)
@@ -73,6 +74,20 @@ func spawn_enemies():
 		add_child(mapp)
 		var enemy = enemyp.instantiate()
 		enemy.type = "grapefruit"
+		enemy.position = Vector2(313,135)
+		enemy.player = %player
+		add_child(enemy)
+	elif level == 4:
+		for mapz in maps:
+			mapz.queue_free()
+		maps = []
+		var mapp = load("res://level3.tscn").instantiate()
+		maps.append(mapp)
+		mapp.position = Vector2(0,0)
+		mapp.z_index = -1
+		add_child(mapp)
+		var enemy = enemyp.instantiate()
+		enemy.type = "lemon"
 		enemy.position = Vector2(313,135)
 		enemy.player = %player
 		add_child(enemy)
