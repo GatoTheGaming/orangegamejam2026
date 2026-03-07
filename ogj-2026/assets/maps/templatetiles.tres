@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://dtj0ds0fve74p"]
 
 [ext_resource type="Texture2D" uid="uid://3n7kvcu0n0y5" path="res://assets/sprites/spritesheets/wood.png" id="1_0v84h"]
+[ext_resource type="Texture2D" uid="uid://bmfnxji00408g" path="res://assets/sprites/spritesheets/train-1-test.png" id="2_d5kob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvpb1"]
 texture = ExtResource("1_0v84h")
@@ -13,7 +14,24 @@ texture_region_size = Vector2i(24, 24)
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0fya"]
+texture = ExtResource("2_d5kob")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+
 [resource]
 tile_size = Vector2i(24, 24)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nvpb1")
+sources/1 = SubResource("TileSetAtlasSource_r0fya")
