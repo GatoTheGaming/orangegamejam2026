@@ -13,6 +13,8 @@ func _ready():
 func die():
 	num_enemies -= 1
 	if num_enemies <= 0:
+		Ui.shutter()
+		get_tree().paused = true
 		level += 1
 		spawn_enemies()
 func spawn_enemies():
