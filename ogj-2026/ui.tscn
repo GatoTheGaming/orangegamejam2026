@@ -148,7 +148,7 @@ position = Vector2(192, 326)
 texture = ExtResource("1_fyqef")
 
 [node name="TextureRect" type="TextureRect" parent="shutter" unique_id=860910687]
-z_index = 3
+z_index = 33
 offset_left = -192.0
 offset_top = -108.0
 offset_right = 192.0
