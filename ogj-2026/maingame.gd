@@ -26,6 +26,8 @@ func IFSTATEMENTOVERLOAD(item,state): # state = true | false
 			%player.JUMP_VELOCITY += 30
 
 func _ready():
+	%rail1.play()
+	%rail2.play()
 	map = load("res://template.tscn")
 	%startscreen.visible = true
 	%startbutton.visible = true
@@ -102,7 +104,36 @@ func spawn_enemies():
 		enemy.position = Vector2(313,135)
 		enemy.player = %player
 		add_child(enemy)
+		num_enemies = 1
 	elif level == 4:
+		for mapz in maps:
+			mapz.queue_free()
+		maps = []
+		var mapp = load("res://level4.tscn").instantiate()
+		maps.append(mapp)
+		mapp.position = Vector2(0,0)
+		mapp.z_index = -1
+		add_child(mapp)
+		
+		var enemy = enemyp.instantiate()
+		enemy.type = "lemon"
+		enemy.position = Vector2(302,132)
+		enemy.player = %player
+		add_child(enemy)
+		
+		enemy = enemyp.instantiate()
+		enemy.type = "lemon"
+		enemy.position = Vector2(108,108)
+		enemy.player = %player
+		add_child(enemy)
+		
+		enemy = enemyp.instantiate()
+		enemy.type = "lemon"
+		enemy.position = Vector2(274,82)
+		enemy.player = %player
+		add_child(enemy)
+		num_enemies = 3
+	elif level == 5:
 		for mapz in maps:
 			mapz.queue_free()
 		maps = []
@@ -112,14 +143,25 @@ func spawn_enemies():
 		mapp.z_index = -1
 		add_child(mapp)
 		var enemy = enemyp.instantiate()
-		enemy.type = "lemon"
+		enemy.type = "grapefruit"
 		enemy.position = Vector2(313,135)
 		enemy.player = %player
 		add_child(enemy)
+		enemy = enemyp.instantiate()
+		enemy.type = "grapefruit"
+		enemy.position = Vector2(250,135)
+		enemy.player = %player
+		add_child(enemy)
+		num_enemies = 2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var vum = 50
+	%wheel1.rotation += (delta * vum)
+	%wheel2.rotation += (delta * vum)
+	%wheel3.rotation += (delta * vum)
+	%wheel4.rotation += (delta * vum)
+	%wheel5.rotation += (delta * vum)
 
 
 func _on_texture_button_pressed():

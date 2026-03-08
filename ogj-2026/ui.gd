@@ -18,6 +18,9 @@ func _process(delta):
 	else:
 		%black.modulate.a = lerpf(%black.modulate.a, 0, 0.025)
 		%shutter.position.y = lerpf(%shutter.position.y, -218, 0.025)
+	if Input.is_action_just_pressed("dash"):
+		get_tree().paused = false
+		shuttering = false
 
 
 func _on_startbutt_pressed():

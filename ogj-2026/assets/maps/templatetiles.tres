@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ljw7ktl0bj62" path="res://assets/sprites/spritesheets/New Piskel-2.png (6).png" id="5_h54ap"]
 [ext_resource type="Texture2D" uid="uid://dkxenaxndklf7" path="res://assets/sprites/spritesheets/pipes.png" id="6_avjke"]
 [ext_resource type="Texture2D" uid="uid://u2ol5oyi4jv3" path="res://assets/sprites/spritesheets/darkpipes.png" id="7_r5rdr"]
+[ext_resource type="Texture2D" uid="uid://4nwd8yi5b5gx" path="res://assets/sprites/spritesheets/glass.png" id="8_qp3lw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvpb1"]
 texture = ExtResource("1_0v84h")
@@ -108,6 +109,12 @@ texture_region_size = Vector2i(24, 24)
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh252"]
+texture = ExtResource("8_qp3lw")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/modulate = Color(1, 1, 1, 0.5058824)
+
 [resource]
 tile_size = Vector2i(24, 24)
 physics_layer_0/collision_layer = 1
@@ -118,3 +125,4 @@ sources/3 = SubResource("TileSetAtlasSource_h54ap")
 sources/4 = SubResource("TileSetAtlasSource_avjke")
 sources/5 = SubResource("TileSetAtlasSource_r5rdr")
 sources/6 = SubResource("TileSetAtlasSource_qp3lw")
+sources/7 = SubResource("TileSetAtlasSource_yh252")
