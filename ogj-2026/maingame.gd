@@ -28,6 +28,7 @@ func IFSTATEMENTOVERLOAD(item,state): # state = true | false
 func _ready():
 	%rail1.play()
 	%rail2.play()
+	%sky.play()
 	map = load("res://template.tscn")
 	%startscreen.visible = true
 	%startbutton.visible = true
@@ -153,6 +154,16 @@ func spawn_enemies():
 		enemy.player = %player
 		add_child(enemy)
 		num_enemies = 2
+	elif level == 6:
+		for mapz in maps:
+			mapz.queue_free()
+		maps = []
+		var mapp = load("res://level6.tscn").instantiate()
+		maps.append(mapp)
+		mapp.position = Vector2(0,0)
+		mapp.z_index = -1
+		add_child(mapp)
+		num_enemies = 100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

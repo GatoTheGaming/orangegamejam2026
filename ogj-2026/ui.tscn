@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://imdgdcu3t0jm" path="res://assets/sprites/spritesheets/Shutter.png" id="1_fyqef"]
 [ext_resource type="Script" uid="uid://4qynqwoqmnc1" path="res://ui.gd" id="1_m6e0p"]
-[ext_resource type="Texture2D" uid="uid://b11o5bw53u7pr" path="res://assets/sprites/spritesheets/slots.png" id="3_27fn8"]
 [ext_resource type="Texture2D" uid="uid://b17nlja38jaty" path="res://assets/sprites/spritesheets/start-button.png" id="4_sosvr"]
 [ext_resource type="Texture2D" uid="uid://3k2pv8irmfci" path="res://assets/sprites/ui/Hela-juice14.png" id="4_vkygq"]
 [ext_resource type="Texture2D" uid="uid://bb01q30k8s1uq" path="res://assets/sprites/ui/Hela-juice15.png" id="5_sosvr"]
@@ -146,15 +145,6 @@ z_index = 3
 texture_filter = 1
 position = Vector2(192, 326)
 texture = ExtResource("1_fyqef")
-
-[node name="TextureRect" type="TextureRect" parent="shutter" unique_id=860910687]
-z_index = 33
-offset_left = -192.0
-offset_top = -108.0
-offset_right = 192.0
-offset_bottom = 108.0
-mouse_filter = 2
-texture = ExtResource("3_27fn8")
 
 [node name="startbutt" type="TextureButton" parent="shutter" unique_id=1202213159]
 unique_name_in_owner = true
